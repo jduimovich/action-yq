@@ -1,0 +1,21 @@
+# action.yml
+name: 'YQ'
+description: 'the yq cmd line tool'
+inputs:
+  file:  # file to read
+    description: 'Yaml Input'
+    required: true
+    default: '-'
+  path:  # yaml path
+    description: 'Yaml path to element'
+    required: true
+    default: ''
+outputs:
+  return: # string with output
+    description: 'the string output of the command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
+    - ${{ inputs.path }}
