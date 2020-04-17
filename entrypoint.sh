@@ -5,10 +5,7 @@ echo "PWD $(pwd)"
 
 ls -al
 du -a
-
-cd /
-echo "PWD $(pwd)"  
-du -a
+env
 
 result="success"
 echo "::set-output name=result::$result"
